@@ -47,7 +47,18 @@ class Main_ui(QtWidgets.QWidget,UDP.UdpLogic, TCP.TcpLogic, SER.PyQt_Serial):
         self.pw4 = pg.plot()
         self.pw5 = pg.plot()
         self.pw6 = pg.plot()
-        self.pw7 = pg.plot()
+        # self.pw7 = pg.plot()
+
+
+        self.img = pg.ImageItem()
+        self.cam = pg.ViewBox()
+        self.cam.setAspectLocked()
+        self.cam.addItem(self.img)
+
+        self.pic_view_q = pg.widgets.GraphicsView.GraphicsView()
+        self.pic_view_q.setCentralItem(self.cam)
+        # self.pic_view_q.setMaximumSize(QtCore.QSize(500, 100))
+
 
         self.Main_d1 = Dock("Dock1", size=(1, 1))
         self.Main_d2 = Dock("Dock2", size=(1, 1))
@@ -68,7 +79,9 @@ class Main_ui(QtWidgets.QWidget,UDP.UdpLogic, TCP.TcpLogic, SER.PyQt_Serial):
         self.Main_d4.addWidget(self.pw4)
         self.Main_d5.addWidget(self.pw5)
         self.Main_d6.addWidget(self.pw6)
-        self.Main_d7.addWidget(self.pw7)
+        self.Main_d7.addWidget(self.pic_view_q)
+        # img.setImage(data[ptr%data.shape[0]], autoLevels=False, levels=useScale, lut=useLut, autoDownsample=downsample)
+        # img.setImage(data[ptr%data.shape[0]], autoLevels=False)
 
         # self.Main_d2.addWidget(self.pw)
         self.MainDockArea.addDock(self.Main_d1)
