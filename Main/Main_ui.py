@@ -28,7 +28,7 @@ import struct
 import pyqtgraph as pg
 import binascii
 import numpy as np
-
+import Custom.RGBBarClass as RGB
 app = pg.mkQApp("Main")
 
 class Main_ui(QtWidgets.QWidget,UDP.UdpLogic, TCP.TcpLogic, SER.PyQt_Serial):
@@ -38,12 +38,12 @@ class Main_ui(QtWidgets.QWidget,UDP.UdpLogic, TCP.TcpLogic, SER.PyQt_Serial):
 
         self.Main_layout = QtWidgets.QVBoxLayout(self)
         self.Main_layout.setObjectName("Main_layout")
-
+        self.Bar = RGB.RGBBarClass()
         self.MainDockArea = DockArea()
         # self.pw = pg.PlotWidget()
         self.pw1 = pg.plot()
         self.pw2 = pg.plot()
-        self.pw3 = pg.plot()
+        # self.pw3 = pg.plot()
         self.pw4 = pg.plot()
         self.pw5 = pg.plot()
         self.pw6 = pg.plot()
@@ -75,7 +75,8 @@ class Main_ui(QtWidgets.QWidget,UDP.UdpLogic, TCP.TcpLogic, SER.PyQt_Serial):
         self.Main_d2.addWidget(self.pw2, row=0,colspan=2)
         self.Main_d2.addWidget(self.saveBtn1, row=1, col=0)
         self.Main_d2.addWidget(self.restoreBtn1, row=1, col=1)
-        self.Main_d3.addWidget(self.pw3)
+        # self.Main_d3.addWidget(self.pw3)
+        self.Main_d3.addWidget(self.Bar)
         self.Main_d4.addWidget(self.pw4)
         self.Main_d5.addWidget(self.pw5)
         self.Main_d6.addWidget(self.pw6)

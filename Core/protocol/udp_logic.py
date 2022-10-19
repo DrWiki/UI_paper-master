@@ -20,6 +20,7 @@ class UdpLogic(Signal.Signals):
             address = ('', self.udp_port1)
             self.udp_socket.bind(address)
             self.link = True
+            print(self.link)
         except Exception as ret:
             self.signal_write_msg.emit('请检查端口号\n')
         else:
@@ -63,6 +64,7 @@ class UdpLogic(Signal.Signals):
                 self.signal_write_msg.emit(msg)
 
     def udp_send_2(self, sendstr):
+
         if self.link is False:
             msg = '请选择服务，并点击连接网络\n'
             self.signal_write_msg.emit(msg)
@@ -70,9 +72,30 @@ class UdpLogic(Signal.Signals):
             try:
                 self.udp_socket.sendto(25, ("192.168.43.167", 9999))
                 msg = 'UDP客户端已发送\n'
+
                 self.signal_write_msg.emit(msg)
             except Exception as ret:
                 msg = '发送失败\n'
+
+                self.signal_write_msg.emit(msg)
+
+    def udp_send_3(self, byt):
+        print(self.link)
+
+        if self.link is False:
+            msg = '请选择服务，并点击连接网络\n'
+            self.signal_write_msg.emit(msg)
+        else:
+            try:
+                self.udp_socket.sendto(byt, ("192.168.3.116", 1122))
+                msg = 'UDP客户端已发送\n'
+                print(msg)
+
+                self.signal_write_msg.emit(msg)
+            except Exception as ret:
+                msg = '发送失败\n'
+                print(msg)
+
                 self.signal_write_msg.emit(msg)
 
     def udp_close(self):
