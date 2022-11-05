@@ -5,7 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Core" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Core/protocol" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Main" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Custom" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Main/Custom" isTestSource="false" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.9 (Pytorch110cuda113)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />

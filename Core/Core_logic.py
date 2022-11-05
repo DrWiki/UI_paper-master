@@ -26,7 +26,7 @@ from PyQt5.QtSerialPort import QSerialPort, QSerialPortInfo
 import time
 import ctypes
 import inspect
-import Metadata
+# import Metadata
 import struct
 import pyqtgraph as pg
 import binascii

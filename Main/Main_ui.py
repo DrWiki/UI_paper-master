@@ -1,34 +1,12 @@
-import argparse
-from collections import deque
-from time import perf_counter
 import protocol.udp_logic as UDP
 import protocol.tcp_logic as TCP
 import protocol.Serial_logic as SER
-import numpy as np
 from pyqtgraph.dockarea.Dock import Dock
 from pyqtgraph.dockarea.DockArea import DockArea
+from pyqtgraph.Qt import QtWidgets
+from PyQt5 import QtWidgets
 import pyqtgraph as pg
-import pyqtgraph.functions as fn
-import pyqtgraph.parametertree as ptree
-from pyqtgraph.Qt import QtCore, QtGui, QtWidgets
-from pyqtgraph.parametertree import Parameter
-from pyqtgraph.parametertree.Parameter import PARAM_TYPES
-from pyqtgraph.parametertree.parameterTypes import GroupParameter
-import threading
-import sys
-import PyQt5
-import socket
-import pandas as pd
-from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtSerialPort import QSerialPort, QSerialPortInfo
-import time
-import ctypes
-import inspect
-import struct
-import pyqtgraph as pg
-import binascii
-import numpy as np
-import Custom.RGBBarClass as RGB
+import RGBBarClass as RGB
 app = pg.mkQApp("Main")
 
 class Main_ui(QtWidgets.QWidget,UDP.UdpLogic, TCP.TcpLogic, SER.PyQt_Serial):
